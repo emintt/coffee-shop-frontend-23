@@ -64,20 +64,29 @@ a {
   grid-template-columns: 100px 1fr;
   position: relative;
   margin: 0 auto;
-  max-width: 1280px;
+  max-width: 960px;
+  background-color: var(--beige);
+
+}
+
+nav {
+  max-height: 100vh;
 }
 
 .nav {
   background-color: var(--pink);
   display: grid;
-  grid-template-rows: repeat(6, 1fr);
+  grid-template-columns: 1fr;
+  grid-template-rows: repeat(8, 1fr);
+
   position: fixed;
+  height: 100%;
 }
 
 .nav-item {
   text-align: center;
   height: auto;
-  padding: 20px;
+  padding: 10px;
 }
 
 .hidden {
@@ -100,9 +109,8 @@ a {
 }
 
 .nav-img {
-  height: 65px;
-  width:65px;
-  justify-content: space-evenly;
+  height: 50px;
+  width:50px;
 }
 
 main {

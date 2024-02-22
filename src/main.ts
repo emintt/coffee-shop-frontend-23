@@ -437,7 +437,7 @@ addTocartBtns?.forEach((button) => {
 });
 
 // when "maksamaan" button is clicked, remove all the items on the cart
-document.querySelector("#paymentbtn")?.addEventListener('click', (event) => {
+document.querySelector("#paymentbtn")?.addEventListener('click', () => {
 	alert('Thank you for your purchase');
 	const cartList = document.querySelector('.cart-item-list') as HTMLElement | null;
 	while (cartList?.hasChildNodes()) {
