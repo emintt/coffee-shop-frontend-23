@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <script type="module" src="../src/admin.ts" defer></script>
+  <link rel="stylesheet" href="../src/css/style.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Agbalumo&family=Caprasimo&display=swap" rel="stylesheet">
+  <title>Jälkkäri Admin</title>
+</head>
+<body>
+  <div class="admin-container">
+    <nav class="admin-nav">
+      <ul class="admin-nav-items">
+        <li class="admin-nav-item" id="logo">
+          <a href="#">Jälkkäri</a>
+        </li>
+        <li class="admin-nav-item">
+          <a href="./orders-admin.html">Tilaukset</a>
+        </li>
+        <li class="admin-nav-item menu">
+          <div class="dropdown">
+            <a href="./menu-admin.html">Menu</a>
+            <div class="dropdown-content">
+              <a href="#">Jäätelöt</a>
+              <a href="#">Leivonnaiset</a>
+              <a href="#">Kakut</a>
+              <a href="#">Kylmät juomat</a>
+              <a href="#">Kuumat juomat</a>
+            </div>
+          </div>
+        </li>
+        <li class="admin-nav-item">
+          <a href="./offer-admin.html">Tarjoukset</a>
+        </li>
+        <li class="admin-nav-item sign-out">
+          <button type="button" id="admin-logout-btn">Kirjaudu ulos</button>
+        </li>
+      </ul>
+    </nav>
+    <div class="order-container">
+      <h2>Tilaukset</h2>
+        <ul class="order-items">
+          <li class="order-item">
+            <p>Tilaus numero</p>
+            <p>Tilaus tiedot</p>
+            <button id="readybtn">Valmis</button>
+          </li>
+          <li class="order-item">
+            <p>Tilaus numero</p>
+            <p>Tilaus tiedot</p>
+            <button id="readybtn">Valmis</button>
+          </li>
+          <li class="order-item">
+            <p>Tilaus numero</p>
+            <p>Tilaus tiedot</p>
+            <button id="readybtn">Valmis</button>
+          </li>
+          <li class="order-item">
+            <p>Tilaus numero</p>
+            <p>Tilaus tiedot</p>
+            <button id="readybtn">Valmis</button>
+          </li>
+          <li class="order-item">
+            <p>Tilaus numero</p>
+            <p>Tilaus tiedot</p>
+            <button id="readybtn">Valmis</button>
+          </li>
+          <li class="order-item">
+            <p>Tilaus numero</p>
+            <p>Tilaus tiedot</p>
+            <button id="readybtn">Valmis</button>
+          </li>
+        </ul>
+    </div>
+  </div>
+</body>
+</html>

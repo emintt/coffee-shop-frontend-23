@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <script type="module" src="../src/admin-login.ts" defer></script>
+    <link rel="stylesheet" href="../src/css/style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Agbalumo&family=Caprasimo&display=swap" rel="stylesheet">
+  <title>Hallinta</title>
+</head>
+<body>
+  <div class="center">
+    <div class="login-admin">
+      <h2>Kirjaudu sisään</h2>
+      <form id="login-form-admin" class="form">
+        <label class="required" for="emailadmin">Sähköposti</label><br>
+        <input type="email" name="emailadmin" required><br>
+        <label class="required" for="passwordadmin">Salasana</label><br>
+        <input type="password" name="passwordadmin" required><br>
+
+        <button id="login-admin" type="submit" class="button">Kirjaudu sisään</button><br>
+      </form>
+    </div>
+  </div>
+  <dialog id="info">
+
+  </dialog>
+</body>
+</html>

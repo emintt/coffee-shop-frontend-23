@@ -1,0 +1,731 @@
+@font-face {
+  font-family: 'Montserrat';
+  src: url(../../fonts/Montserrat-Regular.ttf) format('truetype');
+}
+
+@font-face {
+  font-family: 'Roboto';
+  src: url(../../fonts/Roboto-Regular.ttf) format('truetype');
+}
+
+
+* {
+  box-sizing: border-box;
+}
+
+:root {
+  --black: #000000de;
+  --white: #F6F6F7;
+  --pink: #FACBEA;
+  --beige: #FFE4D6;
+  --dark-purple: #36151e;
+  --magenta: #B0578D;
+  --persian-pink: #D988B9;
+  --red: #ce263cf6;
+}
+
+body {
+  font-family: 'Roboto', 'Agbalumo', 'Montserrat', 'Verdana', sans-serif;
+  margin: 0;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: 'Agbalumo';
+}
+
+body:has(dialog[open]) {
+    overflow-y: hidden;
+}
+
+.title {
+  text-align: center;
+  font-size: 5em;
+  text-decoration: none;
+  background-image: linear-gradient(150deg, var(--pink), var(--magenta));
+  background-size: 100%;
+  background-repeat: repeat;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  -moz-background-clip: text;
+  -moz-text-fill-color: transparent;
+}
+
+.title:hover {
+  transform: scale(1.1);
+  transition-duration: 1s;
+}
+
+a {
+  text-decoration: none;
+}
+
+.container {
+  display: grid;
+  grid-template-columns: 100px 1fr;
+  position: relative;
+  margin: 0 auto;
+  max-width: 1280px;
+}
+
+.nav {
+  background-color: var(--pink);
+  display: grid;
+  grid-template-rows: repeat(6, 1fr);
+  position: fixed;
+}
+
+.nav-item {
+  text-align: center;
+  height: auto;
+  padding: 20px;
+}
+
+.hidden {
+  display: none;
+}
+
+.nav-item:hover {
+  transform: scale(1.1);
+  transition-duration: 1s;
+}
+
+#profile-icon {
+  grid-row-start: 10;
+  grid-row-end: 11;
+}
+
+#shopping-cart-icon {
+  grid-row-start: 11;
+  grid-row-end: 12;
+}
+
+.nav-img {
+  height: 65px;
+  width:65px;
+  justify-content: space-evenly;
+}
+
+main {
+  background-color: var(--beige);
+}
+
+.menu-container {
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-rows: 1fr;
+  gap: 0.5em 2em;
+}
+
+h2 {
+  text-align: center;
+  grid-column-start: 1;
+  grid-column-end: 3;
+}
+
+.menu-list {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-template-rows: auto;
+  gap: 2em;
+}
+
+.menu-item {
+  display: grid;
+  grid-template-columns: 3fr min-content;
+  grid-template-rows: 3fr 1fr;
+  padding: 0 2em;
+}
+
+.info-item {
+  padding: 2em;
+  padding-bottom: 0em;
+  padding-top: 0em;
+  grid-column: 1 / 2;
+  grid-row: 2 / 3;
+  margin-bottom: 1.25em;
+}
+
+.menu-item p {
+  text-align: center;
+  margin: 0.2em;
+}
+
+.info-item p {
+  text-align: center;
+}
+
+.menu-item .old {
+  text-decoration: line-through;
+  color: var(--black);
+  margin-right: 0.2em;
+}
+
+.menu-item .sale {
+  color: var(--red);
+}
+
+.menu-item .menu-img {
+  width: 100%;
+  /* max-width: 250px; */
+  margin: auto;
+  display: block;
+  grid-column:  1 / -1;
+}
+
+.menu-img {
+  object-fit: cover;
+}
+
+.info-item .menu-img {
+  width: 100%;
+  /* max-width: 250px; */
+  margin: auto;
+  display: block;
+  grid-column:  1 / -1;
+  grid-row: 1 / 2;
+}
+
+.menu-item .menu-item-info {
+  grid-column: 1 / -1;
+  grid-row: 2 / 3;
+}
+
+.info-item .menu-item-info {
+  grid-column: 1 / -1;
+  grid-row: 2 / 3;
+}
+
+ul {
+  margin: 0;
+  list-style-type: none;
+  padding: 0;
+}
+
+@media screen and (max-width: 1090px){
+  .menu-list {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+
+@media screen and (max-width: 640px){
+  .menu-list {
+    grid-template-columns: 1fr;
+    /* grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); */
+  }
+}
+
+
+
+/* Dialog */
+dialog {
+  background-color: var(--beige);
+  /* position: absolute; */
+  border: none;
+  border-radius: 8px;
+  padding: 1em;
+  min-width: 640px;
+  margin: auto;
+}
+
+dialog::backdrop {
+  backdrop-filter: blur(10px);
+}
+
+dialog .menu-img {
+  max-width: 400px;
+}
+
+/* @media screen and (max-height: 800px) {
+  dialog {
+    min-width: 650px;
+    min-height: 650px;
+  }
+} */
+
+@media screen and (max-width: 768px) {
+  dialog{
+    min-width: 100%;
+  }
+}
+
+.button {
+  display: block;
+  width: 100%;
+  padding: 0;
+  margin-bottom: 0.75em;
+  border: none;
+  cursor: pointer;
+  text-transform: uppercase;
+  font-weight: 600;
+  color: var(--dark-purple);
+  background-color: var(--pink);
+  border-radius: 8px;
+  transition-duration: 0.4s;
+  font-size: 1em;
+}
+
+/* mouse over link */
+button:hover, input[type="submit"]:hover, .menu-item-btns .button:hover {
+  background-color: hsl(320, 82%, 89%, 0.5);
+}
+
+dialog .product-info {
+  font-size: 1.5em;
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-rows: min-content min-content min-content;
+  grid-auto-rows: auto;
+}
+
+dialog .shopping-cart {
+  font-size: 1.5em;
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-rows: 1fr;
+  grid-auto-rows: auto;
+}
+
+.shopping-cart .cart-item-row {
+  display: flex;
+  align-items: center;
+}
+
+.cart-item {
+  flex: 4;
+}
+
+.cart-item-price {
+  flex: 2;
+}
+
+.shopping-cart .quantity {
+  flex: 2;
+}
+
+.shopping-cart .quantity .quantity-number{
+  width: 80%;
+}
+
+input.cart-quantity-number {
+  text-align: center;
+}
+
+.cart-item-row .remove-btn {
+  flex: 1;
+  padding: 0.5em;
+  margin-left: 1em;
+}
+
+.cart-total {
+  text-align: right;
+  font-size: 1.5em;
+}
+
+.cart-total p {
+  display: inline-block;
+  font-weight: 700;
+  margin-right: 0.5em;
+
+}
+
+.product-info h2 {
+  grid-column: 1/2;
+  grid-row: 1/2;
+  margin-top: 0.5em;
+  margin-bottom: 0;
+}
+.product-info h3 {
+  margin-top: 0.5em;
+  margin-bottom: 0.5em;
+}
+
+.shopping-cart h2 {
+  grid-column: 1/2;
+  grid-row: 1/2;
+}
+
+.product-info .quantity-container {
+  grid-column: 1/2;
+  grid-row: 3/4;
+  padding-bottom: 1.5em;
+  display: grid;
+}
+
+.quantity-container > * {
+  justify-self: center;
+  align-self: center;
+}
+
+.product-info .buttons {
+  grid-column: 1/2;
+  grid-row: 3 / 4;
+}
+.product-info .buttons, #modify-item-dialog .buttons, #delete-item-dialog .buttons {
+  display: flex;
+  gap: 0.5em;
+}
+
+.shopping-cart .buttons {
+  grid-column: 1/2;
+  grid-row: 4/5;
+  display: flex;
+  gap: 0.5em;
+  margin-top: 5px;
+}
+
+#back-btn-info, #back-btn-login, #back-btn-cart, #addtocart-btn,
+.back-btn, .modify-btn, .delete-btn, #back-btn-success, #back-btn-error{
+  padding: 0.75em;
+}
+
+@media screen and (max-width: 640px) {
+  .product-info .buttons,  #modify-item-dialog .buttons, #delete-item-dialog .buttons {
+    flex-wrap: wrap-reverse;
+  }
+}
+
+.quantity {
+  display: grid;
+  grid-template-columns: 2fr 3fr 2fr;
+  justify-items: center;
+}
+
+.quantity > * {
+  justify-self: center;
+  align-self: center;
+}
+
+#quantity-minus, #quantity-plus {
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  width: 50px;
+}
+
+.quantity img {
+  padding: 3px;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.quantity .quantity-number {
+  text-align: center;
+  vertical-align: middle;
+  margin-left: 4px;
+  margin-right: 4px;
+}
+
+.quantity-number {
+  width: 30%;
+}
+
+/* LOGIN Dialog */
+#login-form {
+  display: flex;
+  flex-direction: column;
+  padding: 1em 2em;
+  font-size: 1.5em;
+}
+
+#login-title {
+  font-size: 2em;
+}
+
+#login-dialog .buttons {
+  /* grid-column: 1/2;
+  grid-row: 4/5; */
+  display: flex;
+  gap: 0.5em;
+}
+
+.required::after {
+  content: ' *';
+  color: var(--red);
+}
+
+@media screen and (max-width: 640px) {
+  #login-form {
+    padding: 0.5em;
+  }
+}
+
+/* Hallinta sivut */
+/* Login */
+.center {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+
+.login-admin{
+  padding: 2em;
+  border: 1px solid var(--dark-purple);
+  border-radius: 8px;
+}
+
+.login-admin h2{
+  margin: 0;
+  margin-bottom: 0.75em;
+}
+
+.login-admin form {
+  width: 400px;
+}
+
+.login-admin .button {
+  padding: 0.75em;
+}
+
+.form input:invalid {
+    border: 1px solid var(--red);
+}
+
+input {
+  display: block;
+  width: 100%;
+  padding: 10px;
+  margin-bottom: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}
+
+
+
+/* admin sivu */
+.admin-container {
+	display: grid;
+	grid-template-columns:repeat(12, minmax(min-content, 10em));
+	grid-template-rows: repeat(2, min-content);
+	gap: 1em;
+}
+
+.admin-nav {
+  grid-column: 2 / 12;
+  grid-row: 1 / 2;
+  border-bottom: 1px solid var(--persian-pink);
+  font-family: 'Roboto';
+  font-weight: 600;
+}
+
+.admin-nav-items {
+  display: grid;
+  grid-template-columns: repeat(10, minmax(min-content, 10em));
+  align-items: center;
+}
+
+.sign-out {
+  grid-column: 10 / -1;
+}
+
+.admin-nav-item button {
+  border: none;
+  background-color: transparent;
+  cursor: pointer;
+  font-family: inherit;
+  font-size: 1em;
+  padding: 0.7em 0;
+  font-weight: inherit;
+  text-transform: inherit;
+  color: var(--dark-purple);
+  transition-duration: 2s;
+}
+
+.admin-nav-item a {
+  text-decoration: none;
+  padding: 0.7em 0;
+  display: block;
+  color: var(--dark-purple);
+  text-align: center;
+}
+
+.admin-nav-item a:hover, .admin-nav-item button:hover {
+  color: var(--magenta);
+}
+
+.admin-nav-item a:active {
+  border-bottom: 2px solid var(--magenta);
+}
+
+#logo a{
+  font-family: Agbalumo;
+  font-size: 1.5em;
+}
+
+/* admin sivu -> admin menu sivu*/
+#modify-item-dialog {
+  padding: 3em;
+}
+
+.admin-container .form-container {
+  grid-column: 2 / 12;
+  grid-row: 2 / 3;
+  justify-self: center;
+  min-width: 500px;
+}
+.admin-container .menu-container {
+  grid-column: 2 / 12;
+  grid-row: 3 / 4;
+}
+
+/* change layout for displaying modify button */
+.admin-container .menu-item-info {
+  grid-column: 1 / 2;
+  grid-row: 2 / 3;
+}
+
+.menu-item-btns {
+  grid-column: 2 / 3;
+  grid-row: 2 / 3;
+  margin-bottom: 0;
+  border-radius: 8px;
+  align-self: center;
+  justify-self: right;
+  padding: 0.5em;
+  text-transform: capitalize;
+  display: flex;
+  align-items: self-end;
+  flex-direction: column;
+}
+
+.menu-item-btns button {
+  background-color: var(--pink);
+  padding: 0.5em;
+  margin-bottom: 0.25em;
+}
+
+#delete-item-dialog .delete-content {
+  margin-top: 3em;
+  margin-bottom: 3em;
+  text-align: center;
+}
+/* .modify-icon {
+  display: inline-block;
+  background-image: url(../../icons/edit-icon-png-3587.png);
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+  height: 1.5em;
+  width: 1.5em;
+} */
+
+@media screen and (max-width: 768px) {
+
+  .admin-container .form-container {
+    min-width: 450px;
+  }
+}
+@media screen and (max-width: 640px) {
+  #modify-item-dialog {
+    padding: 1em 1em;
+  }
+
+  .admin-container .form-container {
+    grid-column: 2 / 12;
+  }
+}
+.admin-container .order-container {
+  grid-column: 2 / 12;
+  grid-row: 2 / 3;
+}
+
+.order-container {
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-rows: 1fr;
+  gap: 0.5em 2em;
+}
+
+.order-items {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-template-rows: auto;
+  gap: 2em;
+}
+
+.order-item {
+  text-align: center;
+  border: solid black 1px;
+}
+
+#readybtn {
+  padding: 15 15 15 15;
+  margin-bottom: 0.75em;
+  border: none;
+  cursor: pointer;
+  text-transform: uppercase;
+  font-weight: 600;
+  color: var(--dark-purple);
+  background-color: var(--pink);
+  transition-duration: 0.4s;
+  font-size: 1em;
+  border-radius: 8px;
+}
+
+#readybtn:hover, #offer-activate:hover, #offer-delete:hover{
+  background-color: hsl(320, 82%, 89%, 0.5);
+}
+
+#offer-activate {
+  padding: 10 10 10 10;
+  margin-bottom: 0.75em;
+  border: none;
+  cursor: pointer;
+  text-transform: uppercase;
+  font-weight: 600;
+  color: var(--dark-purple);
+  background-color: var(--pink);
+  transition-duration: 0.4s;
+  font-size: 1em;
+  border-radius: 8px;
+
+}
+
+#offer-delete {
+  padding: 10 10 10 10;
+  margin-bottom: 0.75em;
+  border: none;
+  cursor: pointer;
+  text-transform: uppercase;
+  font-weight: 600;
+  color: var(--dark-purple);
+  background-color: var(--pink);
+  transition-duration: 0.4s;
+  font-size: 1em;
+  border-radius: 8px;
+}
+
+/* The container <div> - needed to position the dropdown content */
+.dropdown {
+  position: relative;
+  display: inline-block;
+}
+
+/* Dropdown Content (Hidden by Default) */
+.dropdown-content {
+  display: none;
+  position: absolute;
+  background-color: #f9f9f9;
+  min-width: 160px;
+  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+  z-index: 1;
+}
+
+/* Links inside the dropdown */
+.dropdown-content a {
+  color: black;
+  padding: 12px 16px;
+  text-decoration: none;
+  display: block;
+}
+
+/* Change color of dropdown links on hover */
+.dropdown-content a:hover {background-color: #f1f1f1}
+
+/* Show the dropdown menu on hover */
+.dropdown:hover .dropdown-content {
+  display: block;
+}
+

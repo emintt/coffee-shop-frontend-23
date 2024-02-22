@@ -1,0 +1,113 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script type="module" src="src/main.ts" defer></script>
+    <link rel="stylesheet" href="src/css/style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Agbalumo&family=Caprasimo&display=swap" rel="stylesheet">
+    <title>Jälkkäri Vite + TS</title>
+  </head>
+  <body>
+    <div class="container">
+      <nav>
+        <ul class="nav">
+          <li class="nav-item discount hidden">
+            <a href="#offers">
+              <img class="nav-img" src="icons/discounts-promotion.png" alt="discounts-promotion">
+            </a>
+          </li>
+          <li class="nav-item">
+            <a href="#Jäätelöt">
+              <img class="nav-img" src="icons/ice-cream.png" alt="ice-cream">
+            </a>
+          </li>
+          <li class="nav-item">
+            <a href="#Leivonnaiset">
+              <img class="nav-img" src="icons/mhancha-pastry.png" alt="pastry">
+            </a>
+          </li>
+          <li class="nav-item">
+            <a href="#Kakut">
+              <img class="nav-img" src="icons/cake-slice.png" alt="cake-slice">
+            </a>
+          </li>
+          <li class="nav-item">
+            <a href="#Kylmät juomat">
+              <img class="nav-img" src="icons/iced-coffee.png" alt="cold-drinks">
+            </a>
+          </li>
+          <li class="nav-item">
+            <a href="#Kuumat juomat">
+              <img class="nav-img" src="icons/tea-cup.png" alt="hot-drinks">
+            </a>
+          </li>
+          <li class="nav-item" id="profile-icon">
+            <img class="nav-img" src="icons/account.png" alt="profile">
+          </li>
+          <li class="nav-item" id="shopping-cart-icon">
+            <img class="nav-img" src="icons/shopping-cart.png" alt="shopping-cart">
+          </li>
+        </ul>
+      </nav>
+      <main>
+        <h1 class="title"><a href="./index.html">Jälkkäri</a></h1>
+        <div class="menu-container">
+          <ul class="menu-items">
+          </ul>
+        </div>
+      </main>
+    </div>
+    <dialog id="product-info-dialog">
+      <section class="product-info">
+        <h2>Tuotetiedot</h2>
+        <div class="info-item">
+        </div>
+        <div class="buttons">
+          <button type="button" class="button" id="back-btn-info">Takaisin</button>
+          <button type="button" class="button addtocart-btn" id="addtocart-btn">Lisää ostoskoriin</button>
+        </div>
+      </section>
+    </dialog>
+    <dialog id="login-dialog">
+      <section>
+        <h2 id="login-title">Kirjautuminen</h2>
+        <form id="login-form" class="form">
+            <label class="required" for="membernumber">Jäsennumero</label><br>
+            <input id="membernumber" type="number" name="membernumber" minlength="4" required><br>
+            <label class="required" for="loginpassword">Salasana</label><br>
+            <input id="loginpassword" type="password" name="loginpassword" required><br>
+            <div class="buttons">
+              <button type="button" class="button" id="back-btn-login">Takaisin</button>
+              <button type="submit" class="button" id="login">Kirjaudu sisään</button>
+            </div>
+        </form>
+      </section>
+    </dialog>
+    <dialog id="shopping-cart-dialog">
+      <section class="shopping-cart">
+          <h2>Ostoskori</h2>
+          <!-- <div class="menu-item">
+            <img class="menu-img" src="img/meltingicecream.png" alt="Coca-Cola drink">
+            <div>
+              <p class="menu-item-name">No items added yet</p>
+            </div>
+          </div> -->
+          <div class="cart-item-list">
+          </div>
+          <div class="cart-total">
+            <p>Total: </p><span id="cart-total">7.00</span><span>&#x20AC;</span>
+          </div>
+          <div class="buttons">
+            <button type="button" class="button" id="back-btn-cart">Takaisin</button>
+            <button type="button" class="button" id="paymentbtn">Maksamaan</button>
+          </div>
+      </section>
+    </dialog>
+    <dialog id="info">
+
+    </dialog>
+  </body>
+</html>

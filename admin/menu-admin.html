@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <script type="module" src="../src/admin.ts" defer></script>
+  <link rel="stylesheet" href="../src/css/style.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Agbalumo&family=Caprasimo&display=swap" rel="stylesheet">
+  <title>Jälkkäri Admin</title>
+</head>
+<body>
+  <div class="admin-container">
+    <nav class="admin-nav">
+      <ul class="admin-nav-items">
+        <li class="admin-nav-item" id="logo">
+          <a href="#">Jälkkäri</a>
+        </li>
+        <li class="admin-nav-item">
+          <a href="./orders-admin.html">Tilaukset</a>
+        </li>
+        <li class="admin-nav-item menu">
+          <div class="dropdown">
+            <a href="./menu-admin.html">Menu</a>
+            <div class="dropdown-content">
+              <a href="#Jäätelöt">Jäätelöt</a>
+              <a href="#Leivonnaiset">Leivonnaiset</a>
+              <a href="#Kakut">Kakut</a>
+              <a href="#Kylmät juomat">Kylmät juomat</a>
+              <a href="#Kuumat juomat">Kuumat juomat</a>
+            </div>
+          </div>
+        </li>
+        <li class="admin-nav-item">
+          <a href="./offer-admin.html">Tarjoukset</a>
+        </li>
+        <li class="admin-nav-item sign-out">
+          <button type="button" id="admin-logout-btn">Kirjaudu ulos</button>
+        </li>
+      </ul>
+    </nav>
+
+    <div class="menu-container menu-admin">
+      <ul class="menu-items">
+      </ul>
+    </div>
+  </div>
+  <dialog id="modify-item-dialog">
+    <section>
+      <h2 id="modify-title">Tuotteen muokkaaminen</h2>
+      <form id="item-modify-form" class="form">
+          <label for="name">Nimi</label><br>
+          <input type="text" name="dish_name"/>
+
+          <label for="price">Hinta</label><br>
+          <input type="text" pattern="([0-9]*[\.]{0,1}[0-9]{0,2})" title="price with 2 decimals" name="dish_price" />
+
+          <label for="description">Kuvaus</label><br>
+          <!-- <input type="text" name="description"/> -->
+          <textarea name="description" id="description" cols="30" rows="4"></textarea> <br>
+
+          <label for="category">Kategory</label><br>
+          <select name="category_id">
+            <option value="1">Jäätelöt</option>
+            <option value="2">Leivonnaiset</option>
+            <option value="3">Kakut</option>
+            <option value="4">Kylmät juomat</option>
+            <option value="5">Kuumat juomat</option>
+          </select><br>
+          <label for="file">Kuva</label><br>
+          <input type="file" name="dish_photo" /><br>
+          <div class="buttons">
+            <button type="button" class="button back-btn" id="modify-back-btn">Takaisin</button>
+            <input type="submit" value="Tallenna" class="button modify-btn" id="modify-submit-btn" required>
+          </div>
+      </form>
+    </section>
+  </dialog>
+  <dialog id="delete-item-dialog">
+    <section>
+      <h2 id="delete-title">Poista annos</h2>
+      <form id="item-delete-form" class="form">
+
+        <div class="delete-content">
+          <p>Haluatko varmasti poistaa kaikki annoksen tiedot?</p>
+        </div>
+        <div class="buttons">
+          <button type="button" class="button back-btn" id="delete-back-btn">Takaisin</button>
+          <input type="submit" value="Poista" class="button delete-btn" required>
+        </div>
+      </form>
+    </section>
+  </dialog>
+  <dialog id="info">
+
+  </dialog>
+</body>
+</html>
